@@ -1,4 +1,4 @@
-import confige from "../confige.js";
+import confige from "../confige/confige.js";
 import { Client, Account, ID } from "appwrite";
 
 export class AuthServise {
