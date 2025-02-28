@@ -122,4 +122,4 @@ export class Service {
   }
 }
 
-export default service;
+export default Service;
