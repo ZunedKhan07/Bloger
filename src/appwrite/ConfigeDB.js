@@ -1,4 +1,4 @@
-import confige from "../confige.js";
+import confige from "../confige/confige";
 import { Client, Databases, Query, Storage, ID } from "appwrite";
 
 export class Service {
