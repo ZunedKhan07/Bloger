@@ -3,8 +3,8 @@ import {Login} from './components/Login'
 
 const Login = () => {
   return (
-    <div>
-      
+    <div py-8>
+      <Login />
     </div>
   )
 }

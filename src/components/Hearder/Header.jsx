@@ -1,12 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router'
-import Logo from '../../Logo'
+import Logo from '../Logo'
 import LogoutBtn from './LogoutBtn'
+import Container from '../../container/Container'
 
 const Header = () => {
  const authStatus = useSelector((state) => 
- state.auth.status)
+ state.auth?.status)
 
  const navigate = useNavigate()
 

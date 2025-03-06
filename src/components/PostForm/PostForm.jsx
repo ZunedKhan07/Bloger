@@ -1,9 +1,12 @@
 import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
-import { Button, Input, RTE, Select } from "..";
+import Select from "../Select";
 import appwriteService from "../../appwrite/ConfigeDB";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Button } from "../Button";
+import Input from "../Input";
+import RTE from "../RTE";
 
 export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({

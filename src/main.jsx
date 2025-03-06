@@ -6,12 +6,73 @@ import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import { AuthLayout, Login } from "./components/index.js";
+import Login from "./components/Login.jsx";
 import AddPost from "./pages/AddPost";
-import Singup from "./components/index.js";
-import { EditsPost } from "./components/index.js";
+import Signup from "./components/Singup.jsx";
+import EditPost from './pages/EditsPost.jsx'
 import Post from "./pages/Post.jsx";
-import { AllPost } from "./components/index.js";
+import AllPost from "./pages/AllPost"
+import Protected from "./components/AuthLayout.jsx";
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App />,
+//     children: [
+//       {
+//         path: "/",
+//         element: <Home />,
+//       },
+//       {
+//         path: "/login",
+//         element: (
+//           <Protected authentication={false}>
+//             <Login />
+//           </Protected>
+//         ),
+//       },
+//       {
+//         path: "/signup",
+//         element: (
+//           <Protected authentication={false}>
+//             <Signup />
+//           </Protected>
+//         ),
+//       },
+//       {
+//         path: "/all-posts",
+//         element: (
+//           <Protected authentication>
+//             {" "}
+//             <AllPost />
+//           </Protected>
+//         ),
+//       },
+//       {
+//         path: "/add-post",
+//         element: (
+//           <Protected authentication>
+//             {" "}
+//             <AddPost />
+//           </Protected>
+//         ),
+//       },
+//       {
+//         path: "/edit-post/:slug",
+//         element: (
+//           <Protected authentication>
+//             {" "}
+//             <EditPost />
+//           </Protected>
+//         ),
+//       },
+//       {
+//         path: "/post/:slug",
+//         element: <Post />,
+//       },
+//     ],
+//   },
+// ]);
 
 const router = createBrowserRouter([
   {
@@ -25,44 +86,41 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: (
-          <AuthLayout authentication={false}>
+          <Protected authentication={false}>
             <Login />
-          </AuthLayout>
+          </Protected>
         ),
       },
       {
         path: "/signup",
         element: (
-          <AuthLayout authentication={false}>
-            <Singup />
-          </AuthLayout>
+          <Protected authentication={false}>
+            <Signup />
+          </Protected>
         ),
       },
       {
         path: "/all-posts",
         element: (
-          <AuthLayout authentication>
-            {" "}
+          <Protected authentication>
             <AllPost />
-          </AuthLayout>
+          </Protected>
         ),
       },
       {
         path: "/add-post",
         element: (
-          <AuthLayout authentication>
-            {" "}
+          <Protected authentication>
             <AddPost />
-          </AuthLayout>
+          </Protected>
         ),
       },
       {
         path: "/edit-post/:slug",
         element: (
-          <AuthLayout authentication>
-            {" "}
+          <Protected authentication>
             <EditPost />
-          </AuthLayout>
+          </Protected>
         ),
       },
       {
@@ -72,6 +130,8 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

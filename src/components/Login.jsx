@@ -5,13 +5,15 @@ import {useForm} from 'react-hook-form'
 import React from 'react'
 import authServise from '../appwrite/Auth';
 import {login} from '../store/AuthSlice'
-import {Button, Input, Logo} from './index'
-
+import Input from './Input';
+import { Button } from './Button';
+import Logo from './Logo';
+  consol
 const Login = () => {
     const [error, setError] = useState("")
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const {ragister, handleSubmit} = useForm()
+    const {register, handleSubmit} = useForm()
 
     const loginSubmit = async (data) => {
         setError("")
@@ -56,11 +58,11 @@ const Login = () => {
                 label= 'Email:'
                 type= 'email'
                 placeholder='Enter your email'
-                {...ragister("email", {
+                {...register("email", {
                     required: true,
                     validate: {
-                        matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || 
-                        "Email address must be a valid address"
+                        matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                        "Email address must be a valid address",
                     }
                 })}
                 />
